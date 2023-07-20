@@ -24,6 +24,7 @@ let images = [
   for (image of images) {
     console.log(image);
     const newDiv = document.createElement('div');
+    newDiv.className = "card";
     newDiv.innerHTML = `
       <img src='${image.imageurl}' alt="art of my gallery">
       <h4>${image.owner}</h4>
@@ -32,4 +33,28 @@ let images = [
     let parentContainer = document.getElementById("imageContainer");
     parentContainer.appendChild(newDiv);
   }
+  let form =document.querySelector("#submitForm");
+  let newOwner=document.getElementById("owner")
+  let newImage =document.getElementById("imageUrl");
+  let price =document.getElementById("price");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let newObject = {
+        owner: newOwner.value,
+        imageurl: newImage.value,
+        price: price.value
+    }
+    console.log(newObject);
+    
+    const formDiv = document.createElement('div');
+    formDiv.className = "card";
+    formDiv.innerHTML = `
+      <img src='${newObject.imageurl}' alt="art of my gallery">
+      <h4>${newObject.owner}</h4>
+      <p>kshs ${newObject.price}</p>
+    `;
+    let parentContainer = document.getElementById("imageContainer");
+    parentContainer.appendChild(formDiv);
   
+  });
