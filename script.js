@@ -56,5 +56,7 @@ let images = [
     `;
     let parentContainer = document.getElementById("imageContainer");
     parentContainer.appendChild(formDiv);
+
+    form.reset();
   
   });
