@@ -60,3 +60,4 @@ let images = [
     form.reset();
   
   });
+  //append child/inner Html
